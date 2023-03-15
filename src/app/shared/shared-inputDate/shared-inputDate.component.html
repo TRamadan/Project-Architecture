@@ -1,0 +1,13 @@
+<div [formGroup]="FormParent" *ngIf="FormParent && FormControlName">
+  <mat-form-field>
+    <input
+      [min]="startDateMin"
+      [placeholder]="Placeholder"
+      [formControlName]="FormControlName"
+      matInput
+      [matDatepicker]="startDate"
+    />
+    <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+    <mat-datepicker #startDate></mat-datepicker>
+  </mat-form-field>
+</div>

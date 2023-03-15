@@ -1,0 +1,13 @@
+<div [formGroup]="FormParent" *ngIf="FormParent && FormControlName">
+  <input
+    matInput
+    [type]="Type"
+    [class]="InputClass"
+    [placeholder]="Placeholder"
+    [maxlength]="inputmax"
+    [formControlName]="FormControlName"
+    (click)="isClicked ? handleOnClick($event) : null"
+    (change)="isChanges ? handleOnChange($event) : handleFile($event)"
+    (focusout)="isFocused ? handleOnFocus($event) : null"
+  />
+</div>

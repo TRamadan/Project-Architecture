@@ -1,0 +1,13 @@
+<div [formGroup]="FormParent" *ngIf="FormParent && FormControlName != null">
+  <mat-form-field appearance="fill">
+    <mat-select
+      [placeholder]="Placeholder"
+      [formControlName]="FormControlName"
+      [multiple]="Ismultiple"
+    >
+      <mat-option *ngFor="let op of Options" [value]="op[returnKey]">{{
+        op[viewKeyAr]
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

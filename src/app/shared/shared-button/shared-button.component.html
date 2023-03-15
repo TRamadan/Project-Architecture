@@ -1,0 +1,18 @@
+<!-- <button
+  [class]="btnClass"
+  (click)="handleBtnEvent()"
+  [disabled]="disable ? 'disabled' : null"
+>
+  {{ btnText }}
+  <i *ngIf="fontAwesomeClass" [class]="fontAwesomeClass"></i>
+</button> -->
+
+<button
+  mat-raised-button
+  [class]="btnClass"
+  (click)="handleBtnEvent()"
+  [disabled]="disable ? 'disabled' : null"
+  [color]="color"
+>
+  {{ btnText }}
+</button>

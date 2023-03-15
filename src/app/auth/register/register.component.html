@@ -1,0 +1,104 @@
+<mat-card>
+  <mat-card-content>
+    <form [formGroup]="registerForm">
+      <app-page-title
+        [class]="'h6 text-dark text-center font-weight-bold'"
+        [titleView]="'Register a new user'"
+      ></app-page-title>
+
+      <div class="row">
+        <div class="col-6">
+          <app-shared-input
+            [FormControlName]="'firstname'"
+            [Type]="'text'"
+            [FormParent]="registerForm"
+            [Placeholder]="'First Name'"
+          >
+          </app-shared-input>
+        </div>
+
+        <div class="col-6">
+          <app-shared-input
+            [Placeholder]="'Last Name'"
+            [FormControlName]="'lastname'"
+            [Type]="'text'"
+            [FormParent]="registerForm"
+          >
+          </app-shared-input>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <app-shared-input
+            [Placeholder]="'E-mail'"
+            [FormControlName]="'email'"
+            [Type]="'email'"
+            [FormParent]="registerForm"
+          >
+          </app-shared-input>
+        </div>
+
+        <div class="col-6">
+          <app-shared-input
+            [Placeholder]="'Password'"
+            [FormControlName]="'password'"
+            [Type]="'password'"
+            [FormParent]="registerForm"
+          >
+          </app-shared-input>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <app-shared-inputDate
+            [FormControlName]="'birthDate'"
+            [Placeholder]="'Birth Date'"
+            [FormParent]="registerForm"
+          ></app-shared-inputDate>
+        </div>
+
+        <div class="col-6">
+          <app-shared-select
+            [FormControlName]="'favoiraitCar'"
+            [Options]="Cars"
+            [Ismultiple]="true"
+            [viewKeyAr]="'model'"
+            [Placeholder]="'Favorait Car'"
+            [returnKey]="'id'"
+            [FormParent]="registerForm"
+          >
+          </app-shared-select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <app-shared-input
+            [Placeholder]="'Username'"
+            [FormControlName]="'username'"
+            [Type]="'text'"
+            [FormParent]="registerForm"
+          >
+          </app-shared-input>
+        </div>
+      </div>
+    </form>
+    <div class="row d-flex justify-content-center justify-content-around">
+      <app-shared-button
+        [color]="'primary'"
+        [btnText]="'Register'"
+        [disable]="registerForm.invalid"
+        (CallBack)="doneregister()"
+      ></app-shared-button>
+
+      <app-shared-button
+        [color]="'primary'"
+        [btnText]="'Login'"
+        (CallBack)="redirecttoLogin()"
+      >
+      </app-shared-button>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,22 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <ng-content select="[header]"></ng-content>
+  </div>
+  <div class="modal-body">
+    <ng-content select="[body]"></ng-content>
+  </div>
+  <div class="modal-footer">
+    <ng-content select="[footer]"></ng-content>
+    <app-shared-button
+      [btnClass]="'btn btn-outline-danger'"
+      [btnText]="'الغاء'"
+      (CallBack)="handleClose()"
+    >
+    </app-shared-button>
+    <!-- <app-
+      [btnClass]="'btn btn-outline-danger'"
+      [btnText]="Lang == 'ar' ? 'الغاء' : 'close'"
+      (CallBack)="handleClose()"
+    ></app-> -->
+  </div>
+</ng-template>
